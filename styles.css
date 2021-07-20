@@ -1,0 +1,219 @@
+/* Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgb(208,237,233), rgb(174, 63, 59));
+    background-repeat: no-repeat;
+    font-family: Quicksand;
+    height: 100vh;
+}
+
+.weather-Main {
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0.2rem;
+}
+
+.weather-Info {
+    width: 50%;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: none;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.weather-Info form {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+form input[type="text"] {
+    width: 90%;
+    height: 100%;
+    border-radius: 1rem 0 0 1rem;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+    color: #505050;
+}
+
+form input[type="text"]:focus-within {
+    border: 2px solid rgb(209, 137, 135);
+    transition: 1s border;
+}
+
+form input[type="text"]::placeholder {
+    font-size: 1rem;
+}
+
+form input[type="text"],
+form button {
+    padding: 0.7rem;
+    outline: none;    
+}
+
+form button {
+    width: 10%;
+    height: 100%;
+    border-radius: 0 1rem 1rem 0;
+    border-left: transparent;
+    border: 2px solid rgb(209, 137, 135);
+    background-color:  rgb(209, 137, 135);
+    text-align: center;
+    color: #fff;
+}
+
+button i {
+    font-size: 1rem;
+}
+
+/* Current Weather */
+.currentWeather {
+    text-align: center;
+    justify-content: center;
+}
+
+.fa-spinner {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* Time Zone */
+.timeZone {
+    padding: 1.5rem 1.5rem 1.6rem 1.5rem;
+}
+
+.timeZone, .weeklyForecast {
+    text-align: center;
+    justify-content: center;
+    width: 50%;
+    background-color: rgba(189, 245, 245, 0.5);
+    border-radius: 1rem;
+    border: none;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.temp {
+    color: #404040;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.temp img {
+    margin-right: 1rem;
+    width: 3.5rem; 
+    height: auto;
+}
+
+.temp h2 {
+    margin-left: 1rem;
+}
+
+.weatherInfo {
+    margin-top: 1rem;
+    padding: 0 0 1.5rem 0;
+}
+
+.weatherInfo h4 {
+    text-transform: capitalize;
+}
+
+.status {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.status p {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    background-color: rgb(209, 137, 135);
+    border-radius: 1rem;
+}
+
+.status p i {
+    margin-bottom: 8px;
+}
+
+.statusContent {
+    justify-content: center;
+}
+
+/* Weekly Forecast */
+.weeklyForecast {
+    padding: 1rem 1.5rem;
+}
+.weeklyForecast h4 {
+    padding: 0.6rem 0.5rem 1rem 0.5rem;
+}
+
+.dailyWeatherDetails {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    border: 1px dashed rgba(146, 146, 148, 0.5);
+    background-color: rgba(149, 197, 197, 0.2);
+    padding: 0.5rem 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.dailyWeatherDetails:nth-child(odd) {
+    margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 800px) {
+    form input[type="text"] {
+        width: 80%;
+    }
+
+    form button {
+        width: 20%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    body {
+        height: 135vh;
+    }
+
+    .weather-Info, .timeZone, .weeklyForecast {
+        width: 70%;
+    }
+
+    .temp {
+        display: inline;
+    }
+
+    .temp img {
+        margin-top: 1rem;
+        margin-right: 0rem;
+    }
+
+    .temp h2 {
+        margin-top: 0.5rem;
+        margin-left: 0rem;
+    }
+
+    .weeklyForecast {
+        padding: 1rem 0.5rem;
+    }
+
+    .dailyWeatherDetails {
+        grid-template-columns: auto auto;;
+    }
+
+    .dailyWeatherDetails span {
+        margin: 0.5rem;
+    }
+}
